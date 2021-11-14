@@ -1,0 +1,857 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		940060A32711F3D800AEC080 /* moretomoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940060A22711F3D800AEC080 /* moretomoneyApp.swift */; };
+		940060A52711F3D800AEC080 /* MortgageCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940060A42711F3D800AEC080 /* MortgageCalculatorView.swift */; };
+		940060A72711F3D900AEC080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 940060A62711F3D900AEC080 /* Assets.xcassets */; };
+		940060AA2711F3D900AEC080 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 940060A92711F3D900AEC080 /* Preview Assets.xcassets */; };
+		940060AC2711F3D900AEC080 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940060AB2711F3D900AEC080 /* Persistence.swift */; };
+		940060AF2711F3D900AEC080 /* moretomoney.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 940060AD2711F3D900AEC080 /* moretomoney.xcdatamodeld */; };
+		940060B92711F3DA00AEC080 /* moretomoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940060B82711F3DA00AEC080 /* moretomoneyTests.swift */; };
+		940060C32711F3DA00AEC080 /* moretomoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940060C22711F3DA00AEC080 /* moretomoneyUITests.swift */; };
+		940060C52711F3DA00AEC080 /* moretomoneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940060C42711F3DA00AEC080 /* moretomoneyUITestsLaunchTests.swift */; };
+		945F45EC273A27A0003C3F11 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F45EB273A279F003C3F11 /* LoginView.swift */; };
+		945F460427406462003C3F11 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F460327406462003C3F11 /* Networking.swift */; };
+		945F460927406AD0003C3F11 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F460827406AD0003C3F11 /* UserModel.swift */; };
+		945F460B2740B331003C3F11 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F460A2740B331003C3F11 /* KeychainHelper.swift */; };
+		945F460D2740CC6F003C3F11 /* InvestmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F460C2740CC6F003C3F11 /* InvestmentModel.swift */; };
+		945F460F2740CD6A003C3F11 /* InvestmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F460E2740CD6A003C3F11 /* InvestmentViewModel.swift */; };
+		945F461C2741A77D003C3F11 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F461B2741A77D003C3F11 /* Extensions.swift */; };
+		945F461E2741B0F3003C3F11 /* NetWorthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F461D2741B0F3003C3F11 /* NetWorthModel.swift */; };
+		94906B9A272B9F7200B7055D /* MortgageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94906B99272B9F7200B7055D /* MortgageViewModel.swift */; };
+		94906B9D272BA04300B7055D /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = 94906B9C272BA04300B7055D /* Poppins */; };
+		94F5F853272DDFC900D01427 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F852272DDFC900D01427 /* MainView.swift */; };
+		94F5F855272DE0FC00D01427 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F854272DE0FB00D01427 /* DashboardView.swift */; };
+		94F5F857272DE15F00D01427 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F856272DE15F00D01427 /* AccountView.swift */; };
+		94F5F859272DEE2000D01427 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F858272DEE2000D01427 /* DashboardViewModel.swift */; };
+		94F5F860272F054100D01427 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F85F272F054100D01427 /* Colors.swift */; };
+		94F5F86227371E7000D01427 /* InvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F86127371E6E00D01427 /* InvestmentView.swift */; };
+		94F5F86427372A7B00D01427 /* IncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F86327372A7A00D01427 /* IncomeView.swift */; };
+		94F5F86627372A8C00D01427 /* AssetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F86527372A8C00D01427 /* AssetView.swift */; };
+		94F5F86827372ECE00D01427 /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F86727372ECE00D01427 /* ExpenseView.swift */; };
+		94F5F86A27372ED800D01427 /* DebtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F86927372ED800D01427 /* DebtView.swift */; };
+		94F5F86C27372EE400D01427 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5F86B27372EE400D01427 /* SettingsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		940060B52711F3DA00AEC080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 940060972711F3D800AEC080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9400609E2711F3D800AEC080;
+			remoteInfo = moretomoney;
+		};
+		940060BF2711F3DA00AEC080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 940060972711F3D800AEC080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9400609E2711F3D800AEC080;
+			remoteInfo = moretomoney;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9400609F2711F3D800AEC080 /* moretomoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moretomoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		940060A22711F3D800AEC080 /* moretomoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moretomoneyApp.swift; sourceTree = "<group>"; };
+		940060A42711F3D800AEC080 /* MortgageCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageCalculatorView.swift; sourceTree = "<group>"; };
+		940060A62711F3D900AEC080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		940060A92711F3D900AEC080 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		940060AB2711F3D900AEC080 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		940060AE2711F3D900AEC080 /* moretomoney.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moretomoney.xcdatamodel; sourceTree = "<group>"; };
+		940060B42711F3DA00AEC080 /* moretomoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moretomoneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		940060B82711F3DA00AEC080 /* moretomoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moretomoneyTests.swift; sourceTree = "<group>"; };
+		940060BE2711F3DA00AEC080 /* moretomoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moretomoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		940060C22711F3DA00AEC080 /* moretomoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moretomoneyUITests.swift; sourceTree = "<group>"; };
+		940060C42711F3DA00AEC080 /* moretomoneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moretomoneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		945F45EB273A279F003C3F11 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		945F460327406462003C3F11 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		945F460827406AD0003C3F11 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		945F460A2740B331003C3F11 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		945F460C2740CC6F003C3F11 /* InvestmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentModel.swift; sourceTree = "<group>"; };
+		945F460E2740CD6A003C3F11 /* InvestmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentViewModel.swift; sourceTree = "<group>"; };
+		945F461B2741A77D003C3F11 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		945F461D2741B0F3003C3F11 /* NetWorthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorthModel.swift; sourceTree = "<group>"; };
+		94906B99272B9F7200B7055D /* MortgageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MortgageViewModel.swift; sourceTree = "<group>"; };
+		94906B9C272BA04300B7055D /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
+		94906B9E272BA0C500B7055D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		94F5F852272DDFC900D01427 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		94F5F854272DE0FB00D01427 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		94F5F856272DE15F00D01427 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		94F5F858272DEE2000D01427 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		94F5F85F272F054100D01427 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		94F5F86127371E6E00D01427 /* InvestmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentView.swift; sourceTree = "<group>"; };
+		94F5F86327372A7A00D01427 /* IncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeView.swift; sourceTree = "<group>"; };
+		94F5F86527372A8C00D01427 /* AssetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetView.swift; sourceTree = "<group>"; };
+		94F5F86727372ECE00D01427 /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
+		94F5F86927372ED800D01427 /* DebtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtView.swift; sourceTree = "<group>"; };
+		94F5F86B27372EE400D01427 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9400609C2711F3D800AEC080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		940060B12711F3DA00AEC080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		940060BB2711F3DA00AEC080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		940060962711F3D800AEC080 = {
+			isa = PBXGroup;
+			children = (
+				940060A12711F3D800AEC080 /* moretomoney */,
+				940060B72711F3DA00AEC080 /* moretomoneyTests */,
+				940060C12711F3DA00AEC080 /* moretomoneyUITests */,
+				940060A02711F3D800AEC080 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		940060A02711F3D800AEC080 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9400609F2711F3D800AEC080 /* moretomoney.app */,
+				940060B42711F3DA00AEC080 /* moretomoneyTests.xctest */,
+				940060BE2711F3DA00AEC080 /* moretomoneyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		940060A12711F3D800AEC080 /* moretomoney */ = {
+			isa = PBXGroup;
+			children = (
+				940060A62711F3D900AEC080 /* Assets.xcassets */,
+				94906B9E272BA0C500B7055D /* Info.plist */,
+				940060AD2711F3D900AEC080 /* moretomoney.xcdatamodeld */,
+				940060AB2711F3D900AEC080 /* Persistence.swift */,
+				940060A22711F3D800AEC080 /* moretomoneyApp.swift */,
+				94F5F852272DDFC900D01427 /* MainView.swift */,
+				94906B9B272BA02600B7055D /* Fonts */,
+				94F5F85E272F052E00D01427 /* Colors */,
+				945F461A2741A76B003C3F11 /* Extensions */,
+				945F460727406AAA003C3F11 /* Models */,
+				945F46192741A4DA003C3F11 /* Views */,
+				945F45E7273848D2003C3F11 /* Networking */,
+				940060A82711F3D900AEC080 /* Preview Content */,
+			);
+			path = moretomoney;
+			sourceTree = "<group>";
+		};
+		940060A82711F3D900AEC080 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				940060A92711F3D900AEC080 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		940060B72711F3DA00AEC080 /* moretomoneyTests */ = {
+			isa = PBXGroup;
+			children = (
+				940060B82711F3DA00AEC080 /* moretomoneyTests.swift */,
+			);
+			path = moretomoneyTests;
+			sourceTree = "<group>";
+		};
+		940060C12711F3DA00AEC080 /* moretomoneyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				940060C22711F3DA00AEC080 /* moretomoneyUITests.swift */,
+				940060C42711F3DA00AEC080 /* moretomoneyUITestsLaunchTests.swift */,
+			);
+			path = moretomoneyUITests;
+			sourceTree = "<group>";
+		};
+		945F45E7273848D2003C3F11 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				945F460327406462003C3F11 /* Networking.swift */,
+				945F460A2740B331003C3F11 /* KeychainHelper.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		945F45EA273A272E003C3F11 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				945F45EB273A279F003C3F11 /* LoginView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		945F460727406AAA003C3F11 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				945F460827406AD0003C3F11 /* UserModel.swift */,
+				945F460C2740CC6F003C3F11 /* InvestmentModel.swift */,
+				945F461D2741B0F3003C3F11 /* NetWorthModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		945F46132741A3CD003C3F11 /* Investment */ = {
+			isa = PBXGroup;
+			children = (
+				94F5F86127371E6E00D01427 /* InvestmentView.swift */,
+				945F460E2740CD6A003C3F11 /* InvestmentViewModel.swift */,
+			);
+			path = Investment;
+			sourceTree = "<group>";
+		};
+		945F46142741A3F9003C3F11 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				94F5F86527372A8C00D01427 /* AssetView.swift */,
+			);
+			path = Asset;
+			sourceTree = "<group>";
+		};
+		945F46152741A401003C3F11 /* Income */ = {
+			isa = PBXGroup;
+			children = (
+				94F5F86327372A7A00D01427 /* IncomeView.swift */,
+			);
+			path = Income;
+			sourceTree = "<group>";
+		};
+		945F46162741A408003C3F11 /* Expense */ = {
+			isa = PBXGroup;
+			children = (
+				94F5F86727372ECE00D01427 /* ExpenseView.swift */,
+			);
+			path = Expense;
+			sourceTree = "<group>";
+		};
+		945F46172741A40E003C3F11 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				94F5F86B27372EE400D01427 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		945F46182741A419003C3F11 /* Debt */ = {
+			isa = PBXGroup;
+			children = (
+				94F5F86927372ED800D01427 /* DebtView.swift */,
+			);
+			path = Debt;
+			sourceTree = "<group>";
+		};
+		945F46192741A4DA003C3F11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				94F5F85D272F048A00D01427 /* Dashboard */,
+				94F5F85B272F03DD00D01427 /* MortgageCalculator */,
+				94F5F85C272F047200D01427 /* Account */,
+				945F45EA273A272E003C3F11 /* Authentication */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		945F461A2741A76B003C3F11 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				945F461B2741A77D003C3F11 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		94906B9B272BA02600B7055D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				94906B9C272BA04300B7055D /* Poppins */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		94F5F85B272F03DD00D01427 /* MortgageCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				940060A42711F3D800AEC080 /* MortgageCalculatorView.swift */,
+				94906B99272B9F7200B7055D /* MortgageViewModel.swift */,
+			);
+			path = MortgageCalculator;
+			sourceTree = "<group>";
+		};
+		94F5F85C272F047200D01427 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				94F5F856272DE15F00D01427 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		94F5F85D272F048A00D01427 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				945F46142741A3F9003C3F11 /* Asset */,
+				945F46152741A401003C3F11 /* Income */,
+				945F46132741A3CD003C3F11 /* Investment */,
+				945F46162741A408003C3F11 /* Expense */,
+				945F46182741A419003C3F11 /* Debt */,
+				945F46172741A40E003C3F11 /* Settings */,
+				94F5F854272DE0FB00D01427 /* DashboardView.swift */,
+				94F5F858272DEE2000D01427 /* DashboardViewModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		94F5F85E272F052E00D01427 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				94F5F85F272F054100D01427 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9400609E2711F3D800AEC080 /* moretomoney */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 940060C82711F3DA00AEC080 /* Build configuration list for PBXNativeTarget "moretomoney" */;
+			buildPhases = (
+				9400609B2711F3D800AEC080 /* Sources */,
+				9400609C2711F3D800AEC080 /* Frameworks */,
+				9400609D2711F3D800AEC080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = moretomoney;
+			packageProductDependencies = (
+			);
+			productName = moretomoney;
+			productReference = 9400609F2711F3D800AEC080 /* moretomoney.app */;
+			productType = "com.apple.product-type.application";
+		};
+		940060B32711F3DA00AEC080 /* moretomoneyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 940060CB2711F3DA00AEC080 /* Build configuration list for PBXNativeTarget "moretomoneyTests" */;
+			buildPhases = (
+				940060B02711F3DA00AEC080 /* Sources */,
+				940060B12711F3DA00AEC080 /* Frameworks */,
+				940060B22711F3DA00AEC080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				940060B62711F3DA00AEC080 /* PBXTargetDependency */,
+			);
+			name = moretomoneyTests;
+			productName = moretomoneyTests;
+			productReference = 940060B42711F3DA00AEC080 /* moretomoneyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		940060BD2711F3DA00AEC080 /* moretomoneyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 940060CE2711F3DA00AEC080 /* Build configuration list for PBXNativeTarget "moretomoneyUITests" */;
+			buildPhases = (
+				940060BA2711F3DA00AEC080 /* Sources */,
+				940060BB2711F3DA00AEC080 /* Frameworks */,
+				940060BC2711F3DA00AEC080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				940060C02711F3DA00AEC080 /* PBXTargetDependency */,
+			);
+			name = moretomoneyUITests;
+			productName = moretomoneyUITests;
+			productReference = 940060BE2711F3DA00AEC080 /* moretomoneyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		940060972711F3D800AEC080 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					9400609E2711F3D800AEC080 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					940060B32711F3DA00AEC080 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 9400609E2711F3D800AEC080;
+					};
+					940060BD2711F3DA00AEC080 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 9400609E2711F3D800AEC080;
+					};
+				};
+			};
+			buildConfigurationList = 9400609A2711F3D800AEC080 /* Build configuration list for PBXProject "moretomoney" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 940060962711F3D800AEC080;
+			packageReferences = (
+			);
+			productRefGroup = 940060A02711F3D800AEC080 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9400609E2711F3D800AEC080 /* moretomoney */,
+				940060B32711F3DA00AEC080 /* moretomoneyTests */,
+				940060BD2711F3DA00AEC080 /* moretomoneyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9400609D2711F3D800AEC080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94906B9D272BA04300B7055D /* Poppins in Resources */,
+				940060AA2711F3D900AEC080 /* Preview Assets.xcassets in Resources */,
+				940060A72711F3D900AEC080 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		940060B22711F3DA00AEC080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		940060BC2711F3DA00AEC080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9400609B2711F3D800AEC080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				940060AC2711F3D900AEC080 /* Persistence.swift in Sources */,
+				94F5F86427372A7B00D01427 /* IncomeView.swift in Sources */,
+				94F5F853272DDFC900D01427 /* MainView.swift in Sources */,
+				945F460F2740CD6A003C3F11 /* InvestmentViewModel.swift in Sources */,
+				945F460B2740B331003C3F11 /* KeychainHelper.swift in Sources */,
+				945F460427406462003C3F11 /* Networking.swift in Sources */,
+				94F5F86827372ECE00D01427 /* ExpenseView.swift in Sources */,
+				94906B9A272B9F7200B7055D /* MortgageViewModel.swift in Sources */,
+				94F5F859272DEE2000D01427 /* DashboardViewModel.swift in Sources */,
+				94F5F855272DE0FC00D01427 /* DashboardView.swift in Sources */,
+				945F461E2741B0F3003C3F11 /* NetWorthModel.swift in Sources */,
+				94F5F860272F054100D01427 /* Colors.swift in Sources */,
+				94F5F86227371E7000D01427 /* InvestmentView.swift in Sources */,
+				94F5F86C27372EE400D01427 /* SettingsView.swift in Sources */,
+				94F5F857272DE15F00D01427 /* AccountView.swift in Sources */,
+				940060A52711F3D800AEC080 /* MortgageCalculatorView.swift in Sources */,
+				945F45EC273A27A0003C3F11 /* LoginView.swift in Sources */,
+				94F5F86A27372ED800D01427 /* DebtView.swift in Sources */,
+				945F460927406AD0003C3F11 /* UserModel.swift in Sources */,
+				94F5F86627372A8C00D01427 /* AssetView.swift in Sources */,
+				940060AF2711F3D900AEC080 /* moretomoney.xcdatamodeld in Sources */,
+				945F461C2741A77D003C3F11 /* Extensions.swift in Sources */,
+				940060A32711F3D800AEC080 /* moretomoneyApp.swift in Sources */,
+				945F460D2740CC6F003C3F11 /* InvestmentModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		940060B02711F3DA00AEC080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				940060B92711F3DA00AEC080 /* moretomoneyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		940060BA2711F3DA00AEC080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				940060C32711F3DA00AEC080 /* moretomoneyUITests.swift in Sources */,
+				940060C52711F3DA00AEC080 /* moretomoneyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		940060B62711F3DA00AEC080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9400609E2711F3D800AEC080 /* moretomoney */;
+			targetProxy = 940060B52711F3DA00AEC080 /* PBXContainerItemProxy */;
+		};
+		940060C02711F3DA00AEC080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9400609E2711F3D800AEC080 /* moretomoney */;
+			targetProxy = 940060BF2711F3DA00AEC080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		940060C62711F3DA00AEC080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "More to Money";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		940060C72711F3DA00AEC080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "More to Money";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		940060C92711F3DA00AEC080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"moretomoney/Preview Content\"";
+				DEVELOPMENT_TEAM = AB69GD7X88;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = moretomoney/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhaslag.moretomoney;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		940060CA2711F3DA00AEC080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"moretomoney/Preview Content\"";
+				DEVELOPMENT_TEAM = AB69GD7X88;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = moretomoney/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhaslag.moretomoney;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		940060CC2711F3DA00AEC080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AB69GD7X88;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhaslag.moretomoneyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moretomoney.app/moretomoney";
+			};
+			name = Debug;
+		};
+		940060CD2711F3DA00AEC080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AB69GD7X88;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhaslag.moretomoneyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/moretomoney.app/moretomoney";
+			};
+			name = Release;
+		};
+		940060CF2711F3DA00AEC080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AB69GD7X88;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhaslag.moretomoneyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = moretomoney;
+			};
+			name = Debug;
+		};
+		940060D02711F3DA00AEC080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AB69GD7X88;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryanhaslag.moretomoneyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = moretomoney;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9400609A2711F3D800AEC080 /* Build configuration list for PBXProject "moretomoney" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				940060C62711F3DA00AEC080 /* Debug */,
+				940060C72711F3DA00AEC080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		940060C82711F3DA00AEC080 /* Build configuration list for PBXNativeTarget "moretomoney" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				940060C92711F3DA00AEC080 /* Debug */,
+				940060CA2711F3DA00AEC080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		940060CB2711F3DA00AEC080 /* Build configuration list for PBXNativeTarget "moretomoneyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				940060CC2711F3DA00AEC080 /* Debug */,
+				940060CD2711F3DA00AEC080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		940060CE2711F3DA00AEC080 /* Build configuration list for PBXNativeTarget "moretomoneyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				940060CF2711F3DA00AEC080 /* Debug */,
+				940060D02711F3DA00AEC080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		940060AD2711F3D900AEC080 /* moretomoney.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				940060AE2711F3D900AEC080 /* moretomoney.xcdatamodel */,
+			);
+			currentVersion = 940060AE2711F3D900AEC080 /* moretomoney.xcdatamodel */;
+			path = moretomoney.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 940060972711F3D800AEC080 /* Project object */;
+}
