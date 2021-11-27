@@ -18,7 +18,7 @@ class DeveloperPreview {
     static let instance = DeveloperPreview()
     private init() { }
     
-    let investment = Investment(
+    var investment = Investment(
         id: "1",
         name: "Sample Investments",
         liquid: "1",

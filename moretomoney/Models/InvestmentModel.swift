@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class Investment: Codable, Identifiable {
+class Investment: Codable, Identifiable, ObservableObject {
     var id, name, liquid: String
     var createdAt, updatedAt, shortName: String?
     var userID, investmentTypeID: String

@@ -11,7 +11,8 @@ struct InvestmentView: View {
     @EnvironmentObject private var investmentVM: InvestmentViewModel
     
     //Selected investment id for edit
-    @StateObject private var sheetDetail = OptionalInvestmentWrapper()
+    @State private var selectedInvestment: Investment
+    @State private var isShowingSheet = false
     
     var body: some View {
         //Category items
@@ -20,21 +21,15 @@ struct InvestmentView: View {
                 HStack {
                     ForEach(investmentVM.allInvestments) { investment in
                         Button(action: {
-                            self.sheetDetail.wrappedValue = investment
+                            self.selectedInvestment = investment
+                            self.isShowingSheet = true
                         }) {
                             InvestmentCard(name: investment.name, value: investment.investmentValue.calculatedValue, type: investment.investmentType.publicName).padding(.trailing, 10)
                         }
                     }
                 }
-                .sheet(item: $sheetDetail.wrappedValue, onDismiss: didDismiss) { investment in
-                    EditInvestmentSheet(investment: investment)
-//                    VStack(alignment: .leading, spacing: 20) {
-//                        Text("Investment Name: \(investment.name)")
-//                        TextField("$0.00", value: investment.investmentValue.currentTotalValue, format: .currency(code: Locale.current.currencyCode ?? "USD"))
-//        //                        TextField("Current Total Value", text: $currentTotalValue)
-//        //                            .padding(.bottom, 10)
-//        //                            .textFieldStyle(RoundedBorderTextFieldStyle())
-//                    }
+                .sheet(isPresented: $isShowingSheet, onDismiss: didDismiss) {
+                    EditInvestmentSheet(investment: $selectedInvestment)
                 }
             }
         }
@@ -63,19 +58,23 @@ struct InvestmentView: View {
         }
         .padding(.top, 10)
     }
+    
+    init() {
+        _selectedInvestment = State(initialValue: DeveloperPreview.instance.investment)
+    }
         
     func didDismiss() {
           // Handle the dismissing action.
-      }
+    }
 }
 
-//struct InvestmentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        InvestmentView()
-//            .previewLayout(.sizeThatFits)
-//            .environmentObject(InvestmentViewModel())
-//    }
-//}
+struct InvestmentView_Previews: PreviewProvider {
+    static var previews: some View {
+        InvestmentView()
+            .previewLayout(.sizeThatFits)
+            .environmentObject(InvestmentViewModel())
+    }
+}
 
 class OptionalInvestmentWrapper: ObservableObject {
     @Published var wrappedValue: Investment?
@@ -86,19 +85,12 @@ class OptionalInvestmentWrapper: ObservableObject {
 }
 
 struct EditInvestmentSheet: View {
-    var investment: Investment
+    @Binding var investment: Investment
     
     var body: some View {
-        let currentTotalValueProxy = Binding(
-            get: {
-                investment.investmentValue.currentTotalValue
-            }, set: { value in
-                investment.investmentValue.currentTotalValue = value
-            })
-        
         VStack(alignment: .leading, spacing: 20) {
             Text("Investment Name: \(investment.name)")
-            TextField("$0.00", value: currentTotalValueProxy, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+            TextField("$0.00", value: $investment.investmentValue.currentTotalValue, format: .currency(code: Locale.current.currencyCode ?? "USD"))
                 .padding(.bottom, 10)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
         }
