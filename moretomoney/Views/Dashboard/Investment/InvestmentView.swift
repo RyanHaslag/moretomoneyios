@@ -8,15 +8,10 @@
 import SwiftUI
 
 struct InvestmentView: View {
-    //Load investments from the API
     @EnvironmentObject private var investmentVM: InvestmentViewModel
     
-    //Future investment for calculator
-    @State private var futureInvestment = FutureInvestment()
-    //Share for calculator
-    @State private var share = Share()
-    
-    @State private var showingSheet = false
+    //Selected investment id for edit
+    @StateObject private var sheetDetail = OptionalInvestmentWrapper()
     
     var body: some View {
         //Category items
@@ -25,16 +20,27 @@ struct InvestmentView: View {
                 HStack {
                     ForEach(investmentVM.allInvestments) { investment in
                         Button(action: {
-                            showingSheet.toggle()
+                            self.sheetDetail.wrappedValue = investment
                         }) {
                             InvestmentCard(name: investment.name, value: investment.investmentValue.calculatedValue, type: investment.investmentType.publicName).padding(.trailing, 10)
                         }
-                        .sheet(isPresented: $showingSheet) {
-                            SheetView()
-                        }
                     }
                 }
+                .sheet(item: $sheetDetail.wrappedValue, onDismiss: didDismiss) { investment in
+                    EditInvestmentSheet(investment: investment)
+//                    VStack(alignment: .leading, spacing: 20) {
+//                        Text("Investment Name: \(investment.name)")
+//                        TextField("$0.00", value: investment.investmentValue.currentTotalValue, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+//        //                        TextField("Current Total Value", text: $currentTotalValue)
+//        //                            .padding(.bottom, 10)
+//        //                            .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    }
+                }
             }
+        }
+
+        .onAppear {
+            investmentVM.reloadInvestments()
         }
         //Future investment performance chart
         VStack {
@@ -56,143 +62,45 @@ struct InvestmentView: View {
                 .foregroundColor(Color.blue500)
         }
         .padding(.top, 10)
-        //Future investment calculator
-        VStack {
-            HStack {
-                Image("coins-icon")
-                Text("Future Investment").font(Font.custom("Poppins-Regular", size: 18))
-                    .foregroundColor(Color.blue500)
-                Text("Calculator").font(Font.custom("Poppins-Bold", size: 18))
-                    .foregroundColor(Color.blue500)
-                Image("coins-icon")
-            }
-            .padding(.bottom, 10)
-            VStack {
-                TextField("Years of Investment", text: $futureInvestment.years)
-                    .padding(.bottom, 10)
-                TextField("Principal", text: $futureInvestment.years)
-                    .padding(.bottom, 10)
-                TextField("Monthly Contribution", text: $futureInvestment.years)
-                    .padding(.bottom, 10)
-                TextField("Expected Interest Rate", text: $futureInvestment.years)
-                    .padding(.bottom, 10)
-                Button("Calculate") {
-                           print("todo: Calculate the future value of the investment")
-                       }
-                       .buttonStyle(GrowingButton())
-                Text("\(futureInvestment.result)")
-                    .font(Font.custom("Poppins-Bold", size: 38))
-                    .foregroundColor(Color.blue500)
-            }
-            .padding(10)
-            .keyboardType(.decimalPad)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-        }
+    }
         
-        //Share Calculator
-        VStack {
-            HStack {
-                Text("Share").font(Font.custom("Poppins-Regular", size: 18))
-                    .foregroundColor(Color.blue500)
-                Text("Calculator").font(Font.custom("Poppins-Bold", size: 18))
-                    .foregroundColor(Color.blue500)
-            }
-            .padding(.bottom, 10)
-            VStack {
-                TextField("Shares", text: $share.amount)
-                    .padding(.bottom, 10)
-                TextField("Price", text: $share.price)
-                    .padding(.bottom, 10)
-                Button("Calculate") {
-                           print("todo: Calculate the future value of the investment")
-                       }
-                       .buttonStyle(GrowingButton())
-                Text("\(share.result)")
-                    .font(Font.custom("Poppins-Bold", size: 38))
-                    .foregroundColor(Color.blue500)
-            }
-            .padding(10)
-            .keyboardType(.decimalPad)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-        }
+    func didDismiss() {
+          // Handle the dismissing action.
+      }
+}
+
+//struct InvestmentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InvestmentView()
+//            .previewLayout(.sizeThatFits)
+//            .environmentObject(InvestmentViewModel())
+//    }
+//}
+
+class OptionalInvestmentWrapper: ObservableObject {
+    @Published var wrappedValue: Investment?
+    
+    init(wrappedValue: Investment? = nil) {
+        self.wrappedValue = wrappedValue
     }
 }
 
-/*
- Struct: Card view to show current values for investments
- */
-struct InvestmentCard: View {
-    var progressIndicatorBackground = Color(red: 0.89, green: 0.89, blue: 0.92)
-    
-    var name = ""
-    var value = ""
-    var type = ""
+struct EditInvestmentSheet: View {
+    var investment: Investment
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text(name)
-                    .font(Font.custom("Poppins-Regular", size: 14))
-                    .foregroundColor(Color.blue300)
-                    .padding(.top, 15)
-                Spacer()
-                ZStack {
-                    Capsule()
-                        .fill(Color.blue100)
-                        .frame(width: 50, height: 25)
-                    Text("Liquid")
-                        .foregroundColor(.white)
-                        .font(Font.custom("Poppins-Regular", size: 11))
-                }
-                .padding(.trailing, 10)
-                .padding(.top, 10)
-            }
-            
-            Text(value)
-                .font(Font.custom("Poppins-Bold", size: 32))
-                .foregroundColor(Color.blue500)
-                .padding(.top, -10)
-            Text(type)
-                .font(Font.custom("Poppins-Regular", size: 14))
-                .foregroundColor(Color.blue300)
-            Text("43% of total")
-                .font(Font.custom("Poppins-Regular", size: 14))
-                .foregroundColor(Color.blue100)
-                .padding(.bottom, -8)
-            ZStack(alignment: .leading) {
-                Capsule()
-                    .fill(progressIndicatorBackground)
-                    .frame(width: 200, height: 5)
-                Capsule()
-                    .fill(Color.pink500)
-                    .frame(width: 100, height: 5)
-            }
-            .padding(.top, 10)
+        let currentTotalValueProxy = Binding(
+            get: {
+                investment.investmentValue.currentTotalValue
+            }, set: { value in
+                investment.investmentValue.currentTotalValue = value
+            })
+        
+        VStack(alignment: .leading, spacing: 20) {
+            Text("Investment Name: \(investment.name)")
+            TextField("$0.00", value: currentTotalValueProxy, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+                .padding(.bottom, 10)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
         }
-        .padding(.leading, 10)
-        .frame(minWidth: 250, maxWidth: 250, minHeight: 150, maxHeight: 150, alignment: .topLeading)
-        .background(.white)
-        .cornerRadius(10)
-    }
-}
-
-struct SheetView: View {
-    @Environment(\.dismiss) var dismiss
-    //dismiss() to dismiss the sheet view
-
-    var body: some View {
-        Button("Press to dismiss") {
-            dismiss()
-        }
-        .font(.title)
-        .padding()
-    }
-}
-
-struct InvestmentView_Previews: PreviewProvider {
-    static var previews: some View {
-        InvestmentView()
-            .previewLayout(.sizeThatFits)
-            .environmentObject(InvestmentViewModel())
     }
 }

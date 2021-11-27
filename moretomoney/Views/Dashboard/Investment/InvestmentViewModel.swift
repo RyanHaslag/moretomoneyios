@@ -18,6 +18,10 @@ class InvestmentViewModel: ObservableObject {
         addSubscribers()
     }
     
+    func reloadInvestments() {
+        dataService.loadInvestments()
+    }
+    
     func addSubscribers() {
         dataService.$allInvestments
             .sink { [weak self] (returnedInvestments) in

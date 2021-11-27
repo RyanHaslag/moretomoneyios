@@ -8,9 +8,10 @@
 import Foundation
 import Combine
 
-struct Investment: Codable, Identifiable {
-    var id, name, liquid, createdAt: String
-    var updatedAt, userID, investmentTypeID, shortName: String
+class Investment: Codable, Identifiable {
+    var id, name, liquid: String
+    var createdAt, updatedAt, shortName: String?
+    var userID, investmentTypeID: String
     var investmentValue: InvestmentValue
     var investmentType: InvestmentType
 
@@ -24,10 +25,23 @@ struct Investment: Codable, Identifiable {
         case investmentValue = "investment_value"
         case investmentType = "investment_type"
     }
+
+    init(id: String, name: String, liquid: String, createdAt: String, updatedAt: String, userID: String, investmentTypeID: String, shortName: String, investmentValue: InvestmentValue, investmentType: InvestmentType) {
+        self.id = id
+        self.name = name
+        self.liquid = liquid
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+        self.userID = userID
+        self.investmentTypeID = investmentTypeID
+        self.shortName = shortName
+        self.investmentValue = investmentValue
+        self.investmentType = investmentType
+    }
 }
 
-//Investment Type Struct
-struct InvestmentType: Codable, Identifiable {
+//Investment Type
+class InvestmentType: Codable {
     var id: Int
     var publicName, shortName, createdAt, updatedAt: String
 
@@ -38,18 +52,26 @@ struct InvestmentType: Codable, Identifiable {
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }
+
+    init(id: Int, publicName: String, shortName: String, createdAt: String, updatedAt: String) {
+        self.id = id
+        self.publicName = publicName
+        self.shortName = shortName
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+    }
 }
 
-//Investment Value Struct
-struct InvestmentValue: Codable, Identifiable {
+//Investment Value
+class InvestmentValue: Codable {
     var id: Int
     var contribution: Int?
     var frequencyPerYear, contributing: Int
-    var expirationDate: String?
+    var expirationDate, createdAt, updatedAt: String?
     var expectedInterestRate, currentShares, currentPrice: Double?
     var currentTotalValue: Int?
     var investmentID: Int
-    var createdAt, updatedAt: String
+    
     var calculatedValue: String {
         if let currentTotalValuePresent = currentTotalValue {
             return String(currentTotalValuePresent).currencyFormatting()
@@ -75,6 +97,21 @@ struct InvestmentValue: Codable, Identifiable {
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }
+
+    init(id: Int, contribution: Int?, frequencyPerYear: Int, contributing: Int, expirationDate: String?, expectedInterestRate: Double?, currentShares: Double?, currentPrice: Double?, currentTotalValue: Int?, investmentID: Int, createdAt: String, updatedAt: String) {
+        self.id = id
+        self.contribution = contribution
+        self.frequencyPerYear = frequencyPerYear
+        self.contributing = contributing
+        self.expirationDate = expirationDate
+        self.expectedInterestRate = expectedInterestRate
+        self.currentShares = currentShares
+        self.currentPrice = currentPrice
+        self.currentTotalValue = currentTotalValue
+        self.investmentID = investmentID
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+    }
 }
 
 class InvestmentModel {
@@ -86,7 +123,7 @@ class InvestmentModel {
     }
     
     //Query the API for all investments for user
-    private func loadInvestments() {
+    func loadInvestments() {
         var getInvestmentsAttempt: AnyCancellable?
 
         //Create the URL request

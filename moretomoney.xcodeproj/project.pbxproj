@@ -16,6 +16,10 @@
 		940060B92711F3DA00AEC080 /* moretomoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940060B82711F3DA00AEC080 /* moretomoneyTests.swift */; };
 		940060C32711F3DA00AEC080 /* moretomoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940060C22711F3DA00AEC080 /* moretomoneyUITests.swift */; };
 		940060C52711F3DA00AEC080 /* moretomoneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940060C42711F3DA00AEC080 /* moretomoneyUITestsLaunchTests.swift */; };
+		9457085F27420EC90054DC6F /* InvestmentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9457085E27420EC90054DC6F /* InvestmentCard.swift */; };
+		94570865274212AA0054DC6F /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94570864274212AA0054DC6F /* DeveloperPreview.swift */; };
+		94570867274F5C5F0054DC6F /* InvestmentCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94570866274F5C5F0054DC6F /* InvestmentCalculator.swift */; };
+		94570869274F5CB70054DC6F /* ShareCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94570868274F5CB70054DC6F /* ShareCalculator.swift */; };
 		945F45EC273A27A0003C3F11 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F45EB273A279F003C3F11 /* LoginView.swift */; };
 		945F460427406462003C3F11 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F460327406462003C3F11 /* Networking.swift */; };
 		945F460927406AD0003C3F11 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F460827406AD0003C3F11 /* UserModel.swift */; };
@@ -69,6 +73,10 @@
 		940060BE2711F3DA00AEC080 /* moretomoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moretomoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		940060C22711F3DA00AEC080 /* moretomoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moretomoneyUITests.swift; sourceTree = "<group>"; };
 		940060C42711F3DA00AEC080 /* moretomoneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moretomoneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9457085E27420EC90054DC6F /* InvestmentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCard.swift; sourceTree = "<group>"; };
+		94570864274212AA0054DC6F /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
+		94570866274F5C5F0054DC6F /* InvestmentCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentCalculator.swift; sourceTree = "<group>"; };
+		94570868274F5CB70054DC6F /* ShareCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCalculator.swift; sourceTree = "<group>"; };
 		945F45EB273A279F003C3F11 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		945F460327406462003C3F11 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		945F460827406AD0003C3F11 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -147,6 +155,7 @@
 				940060AB2711F3D900AEC080 /* Persistence.swift */,
 				940060A22711F3D800AEC080 /* moretomoneyApp.swift */,
 				94F5F852272DDFC900D01427 /* MainView.swift */,
+				94570860274212350054DC6F /* Development */,
 				94906B9B272BA02600B7055D /* Fonts */,
 				94F5F85E272F052E00D01427 /* Colors */,
 				945F461A2741A76B003C3F11 /* Extensions */,
@@ -183,6 +192,14 @@
 			path = moretomoneyUITests;
 			sourceTree = "<group>";
 		};
+		94570860274212350054DC6F /* Development */ = {
+			isa = PBXGroup;
+			children = (
+				94570864274212AA0054DC6F /* DeveloperPreview.swift */,
+			);
+			path = Development;
+			sourceTree = "<group>";
+		};
 		945F45E7273848D2003C3F11 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +232,9 @@
 			children = (
 				94F5F86127371E6E00D01427 /* InvestmentView.swift */,
 				945F460E2740CD6A003C3F11 /* InvestmentViewModel.swift */,
+				9457085E27420EC90054DC6F /* InvestmentCard.swift */,
+				94570866274F5C5F0054DC6F /* InvestmentCalculator.swift */,
+				94570868274F5CB70054DC6F /* ShareCalculator.swift */,
 			);
 			path = Investment;
 			sourceTree = "<group>";
@@ -461,16 +481,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9457085F27420EC90054DC6F /* InvestmentCard.swift in Sources */,
 				940060AC2711F3D900AEC080 /* Persistence.swift in Sources */,
 				94F5F86427372A7B00D01427 /* IncomeView.swift in Sources */,
 				94F5F853272DDFC900D01427 /* MainView.swift in Sources */,
 				945F460F2740CD6A003C3F11 /* InvestmentViewModel.swift in Sources */,
 				945F460B2740B331003C3F11 /* KeychainHelper.swift in Sources */,
 				945F460427406462003C3F11 /* Networking.swift in Sources */,
+				94570867274F5C5F0054DC6F /* InvestmentCalculator.swift in Sources */,
+				94570865274212AA0054DC6F /* DeveloperPreview.swift in Sources */,
 				94F5F86827372ECE00D01427 /* ExpenseView.swift in Sources */,
 				94906B9A272B9F7200B7055D /* MortgageViewModel.swift in Sources */,
 				94F5F859272DEE2000D01427 /* DashboardViewModel.swift in Sources */,
 				94F5F855272DE0FC00D01427 /* DashboardView.swift in Sources */,
+				94570869274F5CB70054DC6F /* ShareCalculator.swift in Sources */,
 				945F461E2741B0F3003C3F11 /* NetWorthModel.swift in Sources */,
 				94F5F860272F054100D01427 /* Colors.swift in Sources */,
 				94F5F86227371E7000D01427 /* InvestmentView.swift in Sources */,

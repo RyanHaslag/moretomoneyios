@@ -21,21 +21,6 @@ struct Asset: Codable, Identifiable, Hashable {
     var value: String
 }
 
-struct SampleInvestment: Codable, Identifiable, Hashable {
-    var id = UUID()
-    var name: String
-    var value: String
-    var type: String
-    var contribution: Double = 0.00
-    var investmentType: String = "Mutual Fund"
-    var contributing: Bool = false
-    var liquid: Bool = true
-    var shares: Double = 0.00
-    var sharePrice: Double = 0.00
-    var overrideTotalValue: Double = 0.00
-    var interestRate: Double = 0.00
-}
-
 struct Expense: Codable, Identifiable, Hashable {
     var id = UUID()
     var name: String
